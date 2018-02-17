@@ -17,14 +17,14 @@ build_dir = Debug
 
 ar = lib /nologo /out:$(objdir)
 cflags = $(debug_specific_cflags) /W4 /WX /EHsc /FR$(objdir) -DDEFINE_LITTLE_ENDIAN -DDEFINE_TRACE -D_CRT_SECURE_NO_WARNINGS 
-ohnetdir = ..\ohNet\Build\Obj\Windows\$(build_dir)^\
+ohnetdir = ..\ohNetGenerated\dependencies\Windows-x86\ohNet-Windows-x86-Release\lib^\
 ohnetgenerateddir = ..\ohNetGenerated\Build\Obj\Windows\$(build_dir)^\
 ohtopologydir = ..\ohTopology\build^\
 ohnetmondir = ..\ohNetmon\build^\
 objdirbare = Build\Obj\Windows\$(build_dir)
 objdir = $(objdirbare)^\
 inc_build = Build\Include
-includes = -I..\ohNet\Build\Include -I..\ohNetGenerated\Build\Include -I..\ohTopology\build\Include
+includes = -I$(ohnetdir)\..\include\ohnet -I..\ohNet\Build\Include -I..\ohNetGenerated\Build\Include -I..\ohTopology\build\Include
 bundle_build = Build\Bundles
 osdir = Windows
 objext = obj
